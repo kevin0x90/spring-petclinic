@@ -50,3 +50,5 @@ CREATE TABLE IF NOT EXISTS visits (
   description TEXT
 );
 CREATE INDEX ON visits (pet_id);
+
+CREATE SEQUENCE IF NOT EXISTS id_seq START 1000;
