@@ -17,6 +17,7 @@ package org.springframework.samples.petclinic.owner;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import javax.validation.Valid;
 
@@ -42,6 +43,8 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 class OwnerController {
+
+	Logger log = Logger.getLogger(OwnerController.class.getName());
 
 	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "owners/createOrUpdateOwnerForm";
 
@@ -142,7 +145,10 @@ class OwnerController {
 		}
 		else {
 			owner.setId(ownerId);
+			long start = System.nanoTime();
 			this.owners.save(owner);
+			long end = System.nanoTime();
+			log.finest("Start "+start+" end "+end+" duration "+(end-start));
 			return "redirect:/owners/{ownerId}";
 		}
 	}
