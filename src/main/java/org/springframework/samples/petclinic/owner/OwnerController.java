@@ -148,7 +148,7 @@ class OwnerController {
 			long start = System.nanoTime();
 			this.owners.save(owner);
 			long end = System.nanoTime();
-			log.finest("Start "+start+" end "+end+" duration "+(end-start));
+			log.finest("Start " + start + " end " + end + " duration " + (end - start));
 			return "redirect:/owners/{ownerId}";
 		}
 	}
