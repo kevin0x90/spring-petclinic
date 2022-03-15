@@ -151,7 +151,7 @@ class OwnerController {
 			do {
 				end = System.currentTimeMillis();
 			}
-			while (end - start < 100);
+			while (end - start < 200);
 			log.finest("Start " + start + " end " + end + " duration " + (end - start));
 			return "redirect:/owners/{ownerId}";
 		}
